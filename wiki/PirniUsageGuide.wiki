@@ -21,7 +21,7 @@ pirni -i en0 -s 192.168.0.1 -b 255.255.255.255 -f “tcp dst port 80″
 
 *-f* is the BPF filter you want to supply to the sniffer. This is very good if you want to filter out specific packets - such as FTP, SMTP or HTTP. Simply supply “” if you want to capture all packets.
 
-Pirni automatically prints out the recieved packets to stdout. If you want to save it to a logfile you can do that like this: pirni [options] > logfile 
+Pirni automatically prints out the recieved packets to stdout. If you want to save it to a logfile you can do that like this: pirni `[`options`]` > logfile 
 
 ==BPF Filters==
 Manual coming soon
