@@ -23,3 +23,7 @@ pirni -i en0 -s 192.168.0.1 -b 255.255.255.255 -f “tcp dst port 80″
 *-f* is the BPF filter you want to supply to the sniffer. This is very good if you want to filter out specific packets - such as FTP, SMTP or HTTP. Simply supply “” if you want to capture all packets.
 
 ==BPF Filters==
+
+
+== TODO ==
+* Implement pcap dump format
