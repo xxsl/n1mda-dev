@@ -1,0 +1,20 @@
+#summary How to use pirni, network sniffer for iPhone.
+#labels Phase-Deploy
+
+= Introduction =
+
+pirni is the worlds first native network sniffer for iPhone.
+The iPhone's wifi has some major drawbacks in it's hardware design, thus we can not properly set the device in promiscious mode.
+
+This is why pirni comes with an ARP spoofer.
+
+
+===Usage:===
+
+pirni -i en0 -s 192.168.0.1 -b 255.255.255.255 -f “tcp dst port 80″
+*-i* is the *i*nterface, for iPhone the wireless interface is called en0
+*-s* is the *s*ource adress, the MAC adress you want to spoof. In most cases, the router.
+*-b* is the *b*roadcast adress, you may want to look this up. But in most cases it would be 255.255.255.255
+-f is the BPF *f*ilter you want to supply to the sniffer. This is very good if you want to filter out specific packets - such as FTP, SMTP or HTTP. Simply supply “” if you want to capture all packets.
+
+==BPF Filters==
