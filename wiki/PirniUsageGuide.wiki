@@ -26,4 +26,4 @@ pirni -i en0 -s 192.168.0.1 -b 255.255.255.255 -f “tcp dst port 80″
 
 
 == TODO ==
-* Implement pcap dump format
+ * Implement pcap dump format
