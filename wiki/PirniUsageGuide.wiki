@@ -10,8 +10,9 @@ This is why pirni comes with an ARP spoofer.
 
 
 ===Usage:===
-
+{{{
 pirni -i en0 -s 192.168.0.1 -b 255.255.255.255 -f “tcp dst port 80″
+}}}
 
 *-i* is the interface, for iPhone the wireless interface is called en0
 
