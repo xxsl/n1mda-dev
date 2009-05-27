@@ -7,14 +7,14 @@ Pirni is the worlds first native network sniffer for iPhone.
 The iPhone's wifi has some major drawbacks in it's hardware design, thus we can not properly set the device in promiscious mode.
 This is why pirni comes with an ARP spoofer that successfully routes all the network traffic through your device and then uses packet forwarding to send it to it's normal recipent (ie. the router)
 
+After a successful network sniffing, you can transfer to dumpfile to your computer and open it up with Wireshark (or any other traffic analyzer that supports pcap) to analyze the traffic.
+
 http://home.axeldoesstockholm.se/pics/pirni.jpg
 
 ===Usage:===
 {{{
-pirni -i en0 -s 192.168.0.1 -b 255.255.255.255 -f “tcp dst port 80″
+pirni -s 192.168.0.1 -b 255.255.255.255 -f “tcp dst port 80″ -o logfile.pcap
 }}}
-
-*-i* is the interface, for iPhone the wireless interface is called _en0_
 
 *-s* is the source adress, the MAC adress you want to spoof. In most cases, the router.
 
@@ -22,7 +22,8 @@ pirni -i en0 -s 192.168.0.1 -b 255.255.255.255 -f “tcp dst port 80″
 
 *-f* is the BPF filter you want to supply to the sniffer. This is very good if you want to filter out specific packets - such as FTP, SMTP or HTTP. Simply supply “” if you want to capture all packets.
 
-Pirni automatically prints out the recieved packets to stdout. If you want to save it to a logfile you can do that like this: pirni `[`options`]` > logfile 
+*-o* is the dumpfile where all the collected packets end up. This is a pcap dump format, that most traffic analyzers can handle.
+
 
 ==BPF Filters==
 BPF filters allow you to select which packets to be dumped. This allows you to "filter" packets, so that only "interesting" packets can be supplied to the software using BPF; this can avoid copying "uninteresting" packets from the operating system kernel to software running in user mode, reducing the CPU requirement to capture packets and the buffer space required to avoid dropping packets.
@@ -59,4 +60,4 @@ To print all ICMP packets that are not echo requests/replies (i.e., not ping pac
 _"icmp[icmptype] != icmp-echo and icmp[icmptype] != icmp-echoreply"_
 
 == TODO (future versions)==
- * Implement pcap dump format (this will probably be available within a week or two and will allow you to analyze the traffic in wireshark or any other program that supports the pcap format)
+ * Implement pcap dump format (this will probably be available within a week or two and will allow you to analyze the traffic in wireshark or any other program that supports the pcap format) *DONE*
