@@ -25,7 +25,38 @@ pirni -i en0 -s 192.168.0.1 -b 255.255.255.255 -f “tcp dst port 80″
 Pirni automatically prints out the recieved packets to stdout. If you want to save it to a logfile you can do that like this: pirni `[`options`]` > logfile 
 
 ==BPF Filters==
-Manual coming soon
+BPF filters allow you to select which packets to be dumped. This allows you to "filter" packets, so that only "interesting" packets can be supplied to the software using BPF; this can avoid copying "uninteresting" packets from the operating system kernel to software running in user mode, reducing the CPU requirement to capture packets and the buffer space required to avoid dropping packets.
 
-== TODO ==
+A full guide of available BPF filters is available here: http://www.cs.ucr.edu/~marios/ethereal-tcpdump.pdf (PDF 76.75Kb)
+
+===Examples===
+To print all packets arriving at or departing from sundown:
+
+_host sundown_
+
+To print traffic between helios and either hot or ace:
+
+_host helios and \( hot or ace \)_
+
+To print all IP packets between ace and any host except helios:
+
+_ip host ace and not helios_
+
+To print the start and end packets (the SYN and FIN packets) of each TCP conversation that involves a non-local host:
+
+_'tcp[tcpflags] & (tcp-syn|tcp-fin) != 0 and not src and dst net localnet'_
+
+To print IP packets longer than 576 bytes sent through gateway snup:
+
+_'gateway snup and ip[2:2] > 576'_
+
+To print IP broadcast or multicast packets that were not sent via ethernet broadcast or multicast:
+
+_'ether[0] & 1 = 0 and ip[16] >= 224'_
+
+To print all ICMP packets that are not echo requests/replies (i.e., not ping packets):
+
+_'icmp[icmptype] != icmp-echo and icmp[icmptype] != icmp-echoreply'_
+
+== TODO (future versions)==
  * Implement pcap dump format
