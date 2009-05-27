@@ -7,6 +7,7 @@ Pirni is the worlds first native network sniffer for iPhone.
 The iPhone's wifi has some major drawbacks in it's hardware design, thus we can not properly set the device in promiscious mode.
 This is why pirni comes with an ARP spoofer that successfully routes all the network traffic through your device and then uses packet forwarding to send it to it's normal recipent (ie. the router)
 
+http://home.axeldoesstockholm.se/pics/pirni.jpg
 
 ===Usage:===
 {{{
