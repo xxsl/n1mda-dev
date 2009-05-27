@@ -19,7 +19,7 @@ Transfer all the files to your iPhone and SSH in to it (or do it locally with mo
 In order to compile you need to install _libnet_ and _libpcap_ from Cydia. You might have to change your settings to "Hacker" in order for this packages to show up in the Cydia listings. You may also install these packages directly from the command line:
 
 {{{
-sudo apt-get install libnet libpcap
+sudo apt-get install gcc libnet libpcap
 }}}
 {{{
 cd pirni
@@ -30,4 +30,4 @@ cp pirni /usr/bin/
 You can now delete the source from your device. Done.
 
 ==Cross compilation: arm-apple-darwin9-gcc==
-Coming soon.
+In order to compile with the cross-compiler you need the libnet and libpcap libraries and headers. Instructions coming tonight.
