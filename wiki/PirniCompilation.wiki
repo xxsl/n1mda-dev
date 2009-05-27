@@ -1,5 +1,5 @@
+#summary How to compile Pirni from sources.
 #labels Phase-Implementation
-#How to compile Pirni from sources.
 
 = Introduction =
 
