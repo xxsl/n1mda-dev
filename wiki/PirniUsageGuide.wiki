@@ -32,31 +32,31 @@ A full guide of available BPF filters is available here: http://www.cs.ucr.edu/~
 ===Examples===
 To print all packets arriving at or departing from sundown:
 
-_host sundown_
+_"host sundown"_
 
 To print traffic between helios and either hot or ace:
 
-_host helios and \( hot or ace \)_
+_"host helios and ( hot or ace )"_
 
 To print all IP packets between ace and any host except helios:
 
-_ip host ace and not helios_
+_"ip host ace and not helios"_
 
 To print the start and end packets (the SYN and FIN packets) of each TCP conversation that involves a non-local host:
 
-_'tcp[tcpflags] & (tcp-syn|tcp-fin) != 0 and not src and dst net localnet'_
+_"tcp[tcpflags] & (tcp-syn|tcp-fin) != 0 and not src and dst net localnet"_
 
 To print IP packets longer than 576 bytes sent through gateway snup:
 
-_'gateway snup and ip[2:2] > 576'_
+_"gateway snup and ip[2:2] > 576"_
 
 To print IP broadcast or multicast packets that were not sent via ethernet broadcast or multicast:
 
-_'ether[0] & 1 = 0 and ip[16] >= 224'_
+_"ether[0] & 1 = 0 and ip[16] >= 224"_
 
 To print all ICMP packets that are not echo requests/replies (i.e., not ping packets):
 
-_'icmp[icmptype] != icmp-echo and icmp[icmptype] != icmp-echoreply'_
+_"icmp[icmptype] != icmp-echo and icmp[icmptype] != icmp-echoreply"_
 
 == TODO (future versions)==
- * Implement pcap dump format
+ * Implement pcap dump format (this will probably be available within a week or two and will allow you to analyze the traffic in wireshark or any other program that supports the pcap format)
