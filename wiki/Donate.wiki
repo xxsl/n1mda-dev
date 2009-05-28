@@ -3,7 +3,7 @@
 
 The software listed in here is free as in beer. But still, I have bills to pay. If you like my software, please consider donating any amount to my paypal-account.
 || Amount || Link ||
-|| Specify your own amount || <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=axelmoller5%40gmail%2ecom&lc=SE&item_name=n1mda%2ddev&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" /></a> ||
+|| Specify your own amount || <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=axelmoller5%40gmail%2ecom&lc=SE&item_name=n1mda%2ddev&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted" target="_blank" ref="nofollow"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" /></a> ||
 
 Thank you!
 
