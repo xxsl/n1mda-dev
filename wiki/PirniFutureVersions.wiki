@@ -1,5 +1,5 @@
 #summary Upcoming features of Pirni.
-#labels Deprecated
+#labels Phase-Requirements
 
 = Introduction =
 
