@@ -1,5 +1,5 @@
 #summary How to use pirni, network sniffer for iPhone.
-#labels Phase-Deploy
+#labels Phase-Deploy,Featured
 
 = Introduction =
 
