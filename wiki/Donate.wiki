@@ -15,3 +15,6 @@ Time is priceless and if you have some to spare then there is no other better wa
     * Help with unit and end-to-end testing
     * Publish an article on your blog (send the link) or elsewhere (e.g., community sites) to educate others regarding some aspect of the project
     * Help with missing documentation 
+
+*Thank you!*
+n1mda
