@@ -7,7 +7,7 @@ Pirni is the worlds first native network sniffer for iPhone.
 The iPhone's wifi has some major drawbacks in it's hardware design, thus we can not properly set the device in promiscious mode.
 This is why pirni comes with an ARP spoofer that successfully routes all the network traffic through your device and then uses packet forwarding to send it to it's normal recipent (ie. the router)
 
-After a successful network sniffing, you can transfer to dumpfile to your computer and open it up with Wireshark (or any other traffic analyzer that supports pcap) to analyze the traffic.
+After a successful network sniffing, you can transfer the dumpfile to your computer and open it up with Wireshark (or any other traffic analyzer that supports pcap) to analyze the traffic.
 
 http://home.axeldoesstockholm.se/pics/pirni.jpg
 
@@ -58,6 +58,10 @@ _"ether[0] & 1 = 0 and ip[16] >= 224"_
 To print all ICMP packets that are not echo requests/replies (i.e., not ping packets):
 
 _"icmp[icmptype] != icmp-echo and icmp[icmptype] != icmp-echoreply"_
+
+== External documents ==
+ * iPod touch iPhone password sniffing: http://www.youtube.com/watch?v=Laf1f5uQz3I
+ * Italian user guide: https://www.ihteam.net/blog/hacking-news/pirni-il-primo-sniffer-per-iphone/
 
 == TODO (future versions)==
  * Implement pcap dump format (this will probably be available within a week or two and will allow you to analyze the traffic in wireshark or any other program that supports the pcap format) *DONE*
