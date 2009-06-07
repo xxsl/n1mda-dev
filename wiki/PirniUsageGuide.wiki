@@ -9,7 +9,7 @@ This is why pirni comes with an ARP spoofer that successfully routes all the net
 
 After a successful network sniffing, you can transfer the dumpfile to your computer and open it up with Wireshark (or any other traffic analyzer that supports pcap) to analyze the traffic.
 
-http://code.google.com/p/n1mda-dev/source/browse/wiki/pirni.jpg
+http://n1mda-dev.googlecode.com/svn/wiki/pirni.jpg
 
 ===Usage:===
 {{{
