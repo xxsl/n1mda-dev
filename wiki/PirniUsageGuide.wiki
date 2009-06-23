@@ -13,16 +13,29 @@ http://n1mda-dev.googlecode.com/svn/wiki/pirni.jpg
 
 ===Usage:===
 {{{
-pirni -s 192.168.0.1 -b 255.255.255.255 -f “tcp dst port 80″ -o logfile.pcap
+pirni [Options] -s <source_ip> -o <logfile>
+
 }}}
 
-*-s* is the source adress, the MAC adress you want to spoof. In most cases, the router.
+OPTIONS:
 
-*-b* is the broadcast adress, you may want to look this up. But in most cases it would be _255.255.255.255_
+*-i:* Specifies the interface that you should initialize. In most cases you don't have to supply this, it will automatically choose en0. But if the interface is called something different on your device (perhaps en1), you would have to supply it.
 
-*-f* is the BPF filter you want to supply to the sniffer. This is very good if you want to filter out specific packets - such as FTP, SMTP or HTTP. Simply supply “” if you want to capture all packets.
+*-s:* Specifies the IP-adress you want to spoof, most likely the default gateway/router
 
-*-o* is the dumpfile where all the collected packets end up. This is a pcap dump format, that most traffic analyzers can handle.
+*-d:* Specifies the target you want to perform MITM on. Broadcast IP (entire network) will be used if nothing else is supplied
+
+*-f:* Specifies the Berkley Packet Filter so that pirni only collects interesting packets. This is very good if you want to filter out specific packets - such as FTP, SMTP or HTTP. If no -f options is supplied, all packets will be captured.
+
+*-o:* Specifies the dumpfile where all the collected packets end up. This is a pcap dump format, that most  traffic analyzers can handle.
+
+{{{
+EXAMPLES:
+        pirni -s 192.168.0.1 -o log.pcap
+        pirni -s 192.168.0.1 -d 192.168.0.128 -f "tcp dst port 80" -o log.pcap
+        pirni -i en1 -s 192.168.0.1 -d 255.255.255.0 -o log.pcap
+}}}
+
 
 
 ==BPF Filters==
