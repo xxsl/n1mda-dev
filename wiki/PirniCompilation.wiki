@@ -33,4 +33,15 @@ sudo cp pirni /usr/bin/
 You can now delete the source from your device. Done.
 
 ==Cross compilation: arm-apple-darwin9-gcc==
-In order to compile with the cross-compiler you need the libnet and libpcap libraries and headers. Instructions will be here when I have time.
+In order to compile with the cross-compiler you need the libnet and libpcap libraries and headers.
+
+Copy
+*/usr/include/libnet`*`*
+*/usr/lib/libnet.dylib*
+*/usr/include/lipcpap`*`*
+*/usr/lib/libpcap.dylib*
+
+into your toolchain path.
+When compiling with arm-apple-darwin9-gcc use -lnet -lpcap
+
+As far as I know, you can compile it using the Apple SDK as well, but I get permission errors from libnet as the Apple code signing disables the binaries ability to setuid(0)
